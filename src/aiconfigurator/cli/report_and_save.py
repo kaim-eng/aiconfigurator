@@ -90,6 +90,7 @@ def _plot_worker_setup_table(
             "(d)gpus/worker",
             "(d)parallel",
             "(d)bs",
+            "power_w",  # NEW: Power in watts
         ]
         for i, row in enumerate(top_configs.to_dict("records")):
             if is_moe:
@@ -141,6 +142,7 @@ def _plot_worker_setup_table(
                     d_gpus_worker,
                     d_parallel,
                     row["(d)bs"],
+                    f"{row['power_w']:.1f}W",  # NEW: Power in watts
                 ]
             )
     else:  # agg
@@ -157,6 +159,7 @@ def _plot_worker_setup_table(
             "gpus/worker",
             "parallel",
             "bs",
+            "power_w",  # NEW: Power in watts
         ]
         for i, row in enumerate(top_configs.to_dict("records")):
             if is_moe:
@@ -188,6 +191,7 @@ def _plot_worker_setup_table(
                     gpus_worker,
                     parallel,
                     row["bs"],
+                    f"{row['power_w']:.1f}W",  # NEW: Power in watts
                 ]
             )
 
